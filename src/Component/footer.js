@@ -1,62 +1,79 @@
 import React from "react";
 import "../scss/footer.scss"
-import { BiLogoFacebook,BiLogoTwitter,BiLogoInstagram,BiLogoLinkedinSquare } from "react-icons/bi";
+import { BiLogoFacebook, BiLogoTwitter, BiLogoInstagram, BiLogoLinkedinSquare } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
+
 
 export default function Footer(params) {
 
-    
 
 
-    return(
-        <>
-        <div className="footer" >
-        <div class="container">
-  	 	<div class="roww">
-  	 		<div class="footer-col">
-  	 			<h4>company</h4>
-  	 			<ul>
-  	 				<li><a href="#">about us</a></li>
-  	 				<li><a href="#">our services</a></li>
-  	 				<li><a href="#">privacy policy</a></li>
-  	 				<li><a href="#">affiliate program</a></li>
-  	 			</ul>
-  	 		</div>
-               <div class="footer-col">
-  	 			<h4>Contact us</h4>
-  	 			<ul>
-  	 				<li><a href="#">Phone no</a></li>
-  	 				<li><a href="#">Address</a></li>
-  	 				<li><a href="#">Landline</a></li>
-                       <li><a href="#">gmail</a></li>
 
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<h4>get help</h4>
-  	 			<ul>
-  	 				<li><a href="#">FAQ</a></li>
-  	 				<li><a href="#">returns</a></li>
-  	 				<li><a href="#">order status</a></li>
-  	 				<li><a href="#">payment options</a></li>
-  	 			</ul>
-  	 		</div>
-  	 		
-  	 		<div class="footer-col">
-  	 			<h4>follow us</h4>
-  	 			<div class="social-links">
-  	 				<a href="#"><BiLogoFacebook/></a>
-  	 				<a href="#"><BiLogoTwitter/></a>
-  	 				<a href="#"><BiLogoInstagram/></a>
-  	 				<a href="#"><BiLogoLinkedinSquare/></a>
+	return (
+		<>
+			<div className="footer" >
+				<div class="container">
+					<div class="roww">
+						<div class="footer-col">
+							<h4>company</h4>
+							<ul>
 
-  	 			</div>
-  	 		</div>
-  	 	</div>
-  	 </div>
-        </div>
+								<li>about us</li>
+								<li>our services</li>
+								<li>privacy policy</li>
+								<li>affiliate program</li>
 
-        </>
-    );
+
+
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>Contact us</h4>
+							<ul>
+
+								<li>Phone</li>
+								<li>Address</li>
+								<li>Landline</li>
+								<li>gmail</li>
+
+
+
+
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>get help</h4>
+							<ul>
+
+								<li>FAQ</li>
+								<li>returns</li>
+								<li>order status</li>
+								<li>payment options</li>
+
+
+
+
+
+							</ul>
+						</div>
+
+						<div class="footer-col">
+							<h4>follow us</h4>
+							<div class="social-links">
+
+								<NavLink className="a" to="/"><BiLogoFacebook /></NavLink>
+								<NavLink className="a" to="/"><BiLogoTwitter /></NavLink>
+								<NavLink className="a" to="/"><BiLogoInstagram /></NavLink>
+								<NavLink className="a" to="/"><BiLogoLinkedinSquare /></NavLink>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</>
+	);
 }
 
 
