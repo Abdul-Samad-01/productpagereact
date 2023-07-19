@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+@mixin cardstyle {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  justify-content: space-around;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  p {
+    text-align: center;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Starting opacity */
+    transform: translateY(-20px); /* Starting position (optional) */
+  }
+  to {
+    opacity: 1; /* Final opacity */
+    transform: translateY(0); /* Final position (optional) */
+  }
+}
+
+.content {
+  padding-top: 80px;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: #e7eaf6;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+  .navlinks {
+    display: flex;
+    gap: 2.8rem;
+
+    li {
+      list-style: none;
+
+      .navbar-link {
+        &:link,
+        &:visited {
+          display: inline-block;
+          text-decoration: none;
+          font-size: 100%;
+          text-transform: uppercase;
+          color: #38598b;
+          transition: color 0.3s linear;
+        }
+
+        &:hover,
+        &:active {
+          color: #a2a8d3;
+        }
+      }
+    }
+  }
+
+  .mobile-navbar-btn {
+    display: none;
+
+    .close-outline {
+      display: none;
+    }
+  }
+
+  .mobile-navbar-btn[name="close-outline"] {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    position: fixed;
+    z-index: 999;
+    margin-bottom: 3rem;
+
+    .menuIcon {
+      flex-direction: column;
+      align-items: center;
+
+      &.active {
+        .navlinks {
+          display: block;
+          position: fixed;
+          width: 100%;
+          top: 80px;
+          left: 0;
+          right: 0;
+          background-color: #e7eaf6;
+          z-index: 999;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          transition: 0.3s; /* Adjust the animation duration */
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+          li {
+            width: 100%;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1rem;
+
+            &:hover {
+              background-color: #113f67;
+              .navbar-link {
+                color: #f2f3f5;
+              }
+            }
+
+            .navbar-link {
+              display: inline-block;
+              text-decoration: none;
+              font-size: 100%;
+              text-transform: uppercase;
+              color: #000205;
+              transition: color 0.3s linear;
+
+              &:focus {
+                /* Add a focus style for keyboard navigation */
+                outline: 2px solid #113f67;
+              }
+            }
+          }
+        }
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .mobile-navbar-btn {
+        display: block;
+        margin-right: 1rem;
+
+        .close-outline {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.homepage {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  @media (max-width: 760px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    padding-top: 3rem;
+    text-align: center;
+    font-style: italic;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+
+  .homeimg {
+    max-width: 500px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+    @media (max-width: 760px) {
+      width: 100%;
+    }
+  }
+}
+
+.productCardStyle {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.homecards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+  @media (max-width: 760px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  .homecard {
+    @include cardstyle();
+    align-items: center;
+    text-align: center;
+  }
+}
